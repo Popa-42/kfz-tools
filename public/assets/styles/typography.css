@@ -1,17 +1,21 @@
+h1, h2, h3, h4, h5, h6 {
+  @apply font-head scroll-m-20 tracking-tight;
+}
+
 h1 {
-  @apply scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl;
+  @apply text-4xl font-extrabold lg:text-5xl;
 }
 
 h2 {
-  @apply scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight mt-10 first:mt-0;
+  @apply border-b pb-2 text-3xl font-semibold mt-10 first:mt-0;
 }
 
 h3 {
-  @apply scroll-m-20 text-2xl font-semibold tracking-tight mt-8 first:mt-0;
+  @apply text-2xl font-semibold mt-8 first:mt-0;
 }
 
 h4 {
-  @apply scroll-m-20 text-xl font-semibold tracking-tight mt-6 first:mt-0;
+  @apply text-xl font-semibold mt-6 first:mt-0;
 }
 
 p {
