@@ -4,7 +4,7 @@
 @import "./theme.css";
 @import "./typography.css";
 
-@custom-variant dark (&:is(.dark *));
+@custom-variant dark (&:where(.dark, .dark *));
 
 @layer base {
   * {
