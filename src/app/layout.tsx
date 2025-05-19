@@ -23,9 +23,9 @@ export const metadata: Metadata = {
   icons: [
     {
       rel: "icon",
-      type: "image/x-icon",
-      sizes: "96x96",
-      url: "/assets/favicon.ico",
+      type: "image/png",
+      sizes: "250x250",
+      url: "/assets/images/favicon/logo-p.png",
     },
   ],
 };
@@ -36,7 +36,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="dark">
       <body className="antialiased">
         <main className={clsx(hind.variable, poppins.variable, "font-sans")}>
           {children}
