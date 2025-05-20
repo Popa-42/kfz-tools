@@ -27,7 +27,7 @@ blockquote {
 }
 
 ul {
-  @apply my-6 ml-6 list-disc [&>li]:mt-2;
+  @apply my-6 ml-6 list-disc [&>li]:first:mt-2;
 }
 
 ol {
