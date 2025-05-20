@@ -110,21 +110,20 @@ BWL,"Baden-Württemberg, Landesregierung, Landtag und Polizei",Baden-Württember
 BYL,"Bayern, Landesregierung und Landtag",Bayerischer Landtag,Bayern,Landesregierung
 BZ,Landkreis Bautzen,Bautzen,Sachsen,
 BZA,Landkreis Bergzabern,Bergzabern,Rheinland-Pfalz,auslaufend
-C,Chemnitz
-CA,Calau
-CAS,Castrop-Rauxel [Stadt]
-CB,Cottbus [Landkreis]
-CB,Cottbus
-CE,Celle
-CHA,Cham [Oberpfalz]
-CLP,Cloppenburg
-CLZ,Clausthal-Zellerfeld (Zellerfeld)
-CO,Coburg
-COC,Cochem-Zell (Cochem)
-COE,Coesfeld [Westfalen]
-CR,Crailsheim
-CUX,Cuxhaven
-CW,Calw
+C,Stadt Chemnitz,Chemnitz,Sachsen,
+CA,Landkreis Oberspreewald-Lausitz,Calau,Brandenburg,
+CAS,Kreis Recklinghausen,Castrop-Rauxel,Nordrhein-Westfalen,
+CB,Stadt Cottbus,Cottbus,Brandenburg,
+CE,Landkreis Celle,Celle,Niedersachsen,
+CHA,Landkreis Cham,Cham,Bayern,
+CLP,Kreis Cloppenburg,Cloppenburg,Niedersachsen,
+CLZ,Landkreis Goslar,Clausthal-Zellerfeld,Niedersachsen,
+CO,Stadt Coburg und Landkreis Coburg (Zweckverband Zulassungsstelle Coburg),Coburg,Bayern,
+COC,Landkreis Cochem-Zell,Cochem,Rheinland-Pfalz,
+COE,Kreis Coesfeld,Coesfeld,Nordrhein-Westfalen,
+CR,Landkreis Schwäbisch Hall,Crailsheim,Baden-Württemberg,
+CUX,Landkreis Cuxhaven,Cuxhaven,Niedersachsen,
+CW,Landkreis Calw,Calw,Baden-Württemberg,
 D,Düsseldorf [Stadt]
 DA,Darmstadt-Dieburg (Darmstadt)
 DA,Darmstadt
