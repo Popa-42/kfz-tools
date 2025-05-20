@@ -18,8 +18,8 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Next.js Template",
-  description: "A Next.js template repository.",
+  title: "Kfz-Learner",
+  description: "Eine Webapp, um die deutschen Kfz-Kennzeichen zu lernen",
   icons: [
     {
       rel: "icon",
