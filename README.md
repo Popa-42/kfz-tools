@@ -38,8 +38,8 @@ Die App ist dann unter `http://localhost:8080` erreichbar.
 ## Datenquelle
 
 Die Daten der Kfz-Kennzeichen stammen von [openpotato/kfz-kennzeichen](https://github.com/openpotato/kfz-kennzeichen)
-und sind unter der Open Database License (ODbL) Version 1.0 lizenziert. Die Daten wurden in das Projekt integriert und
-sind im Ordner `public/assets/data` zu finden.
+und sind unter der [Open Database License (ODbL)](public/assets/data/LICENSE) lizenziert. Die Daten wurden in das
+Projekt integriert und sind im Ordner `public/assets/data` zu finden.
 
 ## Lizenz
 
