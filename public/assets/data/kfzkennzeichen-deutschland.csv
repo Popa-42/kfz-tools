@@ -1,60 +1,60 @@
-Kfz-Kennzeichen,Stadt oder Landkreis,abgeleitet von,Bundesland
-A,Stadt Augsburg,Augsburg,Bayern
-A,Landkreis Augsburg,Augsburg,Bayern
-AA,Ostalbkreis,Aalen,Baden-Württemberg
-AB,Stadt Aschaffenburg,Aschaffenburg,Bayern
-AB,Landkreis Aschaffenburg,Aschaffenburg,Bayern
-ABG,Landkreis Altenburger Land,Altenburg,Thüringen
-ABI,Landkreis Anhalt-Bitterfeld,Anhalt-Bitterfeld,Sachsen-Anhalt
-AC,Städteregion Aachen,Aachen / Aix la Chapelle,Nordrhein-Westfalen
-AE,Vogtlandkreis,Auerbach,Sachsen
-AH,Kreis Borken,Ahaus,Nordrhein-Westfalen
-AIB,Landkreis München,Bad Aibling,Bayern
-AIB,Landkreis Rosenheim,Bad Aibling,Bayern
-AIC,Landkreis Aichach-Friedberg,Aichach,Bayern
-AK,Landkreis Altenkirchen (Westerwald),Altenkirchen,Rheinland-Pfalz
-AL,Landkreis Altena (Westfalen),Altena,Nordrhein-Westfalen
-ALF,Landkreis Hildesheim,Alfeld (Leine),Niedersachsen
-ALS,Alsfeld (Oberhessen),Alsfeld,Hessen
-ALZ,Landkreis Aschaffenburg,Alzenau (Unterfranken),Bayern
-AM,Stadt Amberg,Amberg,Bayern
-AN,Stadt Ansbach,Ansbach,Bayern
-AN,Landkreis Ansbach,Ansbach,Bayern
-ANA,Erzgebirgskreis,Annaberg-Buchholz,Sachsen
-ANG,Landkreis Uckermark,Angermünde,Brandenburg
-ANK,Landkreis Vorpommern-Greifswald ohne die Stadt Greifswald,Anklam,Mecklenburg-Vorpommern
-AÖ,Landkreis Altötting,Altötting,Bayern
-AP,Landkreis Weimarer Land,Apolda,Thüringen
-APD,Landkreis Weimarer Land,Apolda,Thüringen
-AR,Landkreis Arnsberg,Arnsberg,Nordrhein-Westfalen
-ARN,Ilm-Kreis,Arnstadt,Thüringen
-ART,Kyffhäuserkreis,Artern,Thüringen
-AS,Landkreis Amberg-Sulzbach,"Amberg, Sulzbach",Bayern
-ASD,Landkreis Aschendorf-Hümmling,Aschendorf,Niedersachsen
-ASL,Salzlandkreis,Aschersleben,Sachsen-Anhalt
-ASZ,Erzgebirgskreis,"Aue, Schwarzenberg",Sachsen
-AT,Landkreis Mecklenburgische Seenplatte ohne die Stadt Neubrandenburg,Altentreptow,Mecklenburg-Vorpommern
-AU,Erzgebirgskreis,Aue,Sachsen
-AUR,Landkreis Aurich,Aurich,Niedersachsen
-AW,Landkreis Ahrweiler,Ahrweiler,Rheinland-Pfalz
-AZ,Landkreis Alzey-Worms,Alzey,Rheinland-Pfalz
-AZE,Landkreis Anhalt-Bitterfeld,Landkreis Anhalt-Zerbst (bis Herbst 2007),Sachsen-Anhalt
-B,Stadt Berlin,Berlin,Berlin
-B,"Berlin, Senat und Abgeordnetenhaus",Berlin,Berlin
-BA,Stadt Bamberg,Bamberg,Bayern
-BA,Landkreis Bamberg,Bamberg,Bayern
-BAD,Stadt Baden-Baden,Baden-Baden,Baden-Württemberg
-BAR,Landkreis Barnim,Barnim,Brandenburg
-BB,Landkreis Böblingen,Böblingen,Baden-Württemberg
-BBG,Salzlandkreis,Bernburg (Saale),Sachsen-Anhalt
-BBL,"Brandenburg, Landesregierung, Landtag und Polizei",Brandenburgische Landesregierung,Brandenburg
-BC,Landkreis Biberach,Biberach an der Riß,Baden-Württemberg
-BCH,Neckar-Odenwald-Kreis,Buchen (Odenwald),Baden-Württemberg
-BD,"Deutscher Bundestag, Bundesrat, Bundespräsidialamt, Bundesregierung, Bundesministerien, Bundesfinanzverwaltung (z. B. Zoll) und Bundesverfassungsgericht",Bundesdienst,
-BE,Kreis Warendorf,Beckum,Nordrhein-Westfalen
-BED,Landkreis Mittelsachsen,Brand-Erbisdorf,Sachsen
-BEI,Landkreis Beilngries,Beilngries,Bayern
-BEL,Kreis Belzig,Belzig,Brandenburg
+Kfz-Kennzeichen,Stadt oder Landkreis,abgeleitet von,Bundesland,Anmerkungen
+A,Stadt Augsburg,Augsburg,Bayern,
+A,Landkreis Augsburg,Augsburg,Bayern,
+AA,Ostalbkreis,Aalen,Baden-Württemberg,
+AB,Stadt Aschaffenburg,Aschaffenburg,Bayern,
+AB,Landkreis Aschaffenburg,Aschaffenburg,Bayern,
+ABG,Landkreis Altenburger Land,Altenburg,Thüringen,
+ABI,Landkreis Anhalt-Bitterfeld,Anhalt-Bitterfeld,Sachsen-Anhalt,
+AC,Städteregion Aachen,Aachen / Aix la Chapelle,Nordrhein-Westfalen,
+AE,Vogtlandkreis,Auerbach,Sachsen,
+AH,Kreis Borken,Ahaus,Nordrhein-Westfalen,
+AIB,Landkreis München,Bad Aibling,Bayern,
+AIB,Landkreis Rosenheim,Bad Aibling,Bayern,
+AIC,Landkreis Aichach-Friedberg,Aichach,Bayern,
+AK,Landkreis Altenkirchen (Westerwald),Altenkirchen,Rheinland-Pfalz,
+AL,Landkreis Altena (Westfalen),Altena,Nordrhein-Westfalen,auslaufend
+ALF,Landkreis Hildesheim,Alfeld (Leine),Niedersachsen,
+ALS,Alsfeld (Oberhessen),Alsfeld,Hessen,
+ALZ,Landkreis Aschaffenburg,Alzenau (Unterfranken),Bayern,
+AM,Stadt Amberg,Amberg,Bayern,
+AN,Stadt Ansbach,Ansbach,Bayern,
+AN,Landkreis Ansbach,Ansbach,Bayern,
+ANA,Erzgebirgskreis,Annaberg-Buchholz,Sachsen,
+ANG,Landkreis Uckermark,Angermünde,Brandenburg,
+ANK,Landkreis Vorpommern-Greifswald ohne die Stadt Greifswald,Anklam,Mecklenburg-Vorpommern,
+AÖ,Landkreis Altötting,Altötting,Bayern,
+AP,Landkreis Weimarer Land,Apolda,Thüringen,
+APD,Landkreis Weimarer Land,Apolda,Thüringen,
+AR,Landkreis Arnsberg,Arnsberg,Nordrhein-Westfalen,auslaufend
+ARN,Ilm-Kreis,Arnstadt,Thüringen,
+ART,Kyffhäuserkreis,Artern,Thüringen,
+AS,Landkreis Amberg-Sulzbach,"Amberg, Sulzbach",Bayern,
+ASD,Landkreis Aschendorf-Hümmling,Aschendorf,Niedersachsen,auslaufend
+ASL,Salzlandkreis,Aschersleben,Sachsen-Anhalt,
+ASZ,Erzgebirgskreis,"Aue, Schwarzenberg",Sachsen,
+AT,Landkreis Mecklenburgische Seenplatte ohne die Stadt Neubrandenburg,Altentreptow,Mecklenburg-Vorpommern,
+AU,Erzgebirgskreis,Aue,Sachsen,
+AUR,Landkreis Aurich,Aurich,Niedersachsen,
+AW,Landkreis Ahrweiler,Ahrweiler,Rheinland-Pfalz,
+AZ,Landkreis Alzey-Worms,Alzey,Rheinland-Pfalz,
+AZE,Landkreis Anhalt-Bitterfeld,Landkreis Anhalt-Zerbst (bis Herbst 2007),Sachsen-Anhalt,
+B,Stadt Berlin,Berlin,Berlin,
+B,"Berlin, Senat und Abgeordnetenhaus",Berlin,Berlin,Landesregierung
+BA,Stadt Bamberg,Bamberg,Bayern,
+BA,Landkreis Bamberg,Bamberg,Bayern,
+BAD,Stadt Baden-Baden,Baden-Baden,Baden-Württemberg,
+BAR,Landkreis Barnim,Barnim,Brandenburg,
+BB,Landkreis Böblingen,Böblingen,Baden-Württemberg,
+BBG,Salzlandkreis,Bernburg (Saale),Sachsen-Anhalt,
+BBL,"Brandenburg, Landesregierung, Landtag und Polizei",Brandenburgische Landesregierung,Brandenburg,Landesregierung
+BC,Landkreis Biberach,Biberach an der Riß,Baden-Württemberg,
+BCH,Neckar-Odenwald-Kreis,Buchen (Odenwald),Baden-Württemberg,
+BD,"Bundestag, Bundesrat, Bundespräsidialamt, Bundesregierung, Bundesministerien, Bundesfinanzverwaltung und Bundesverfassungsgericht",Bundesdienst,bundesweit,
+BE,Kreis Warendorf,Beckum,Nordrhein-Westfalen,
+BED,Landkreis Mittelsachsen,Brand-Erbisdorf,Sachsen,
+BEI,Landkreis Beilngries,Beilngries,Bayern,auslaufend
+BEL,Kreis Belzig,Belzig,Brandenburg,auslaufend
 BER,Landkreis Barnim,Bernau bei Berlin,Brandenburg
 BF,Kreis Steinfurt,Burgsteinfurt,Nordrhein-Westfalen
 BGD,Landkreis Berchtesgadener Land,Berchtesgaden,Bayern
@@ -88,26 +88,28 @@ BR,Landkreis Karlsruhe,Bruchsal,Baden-Württemberg
 BRA,Landkreis Wesermarsch,Brake (Unterweser),Niedersachsen
 BRB,Stadt Brandenburg an der Havel,Brandenburg an der Havel,Brandenburg
 BRG,Landkreis Jerichower Land,Burg,Sachsen-Anhalt
-BRI,Brilon
-BRK,Bad Brückenau
-BRL,Blankenburg (Braunlage [Harz])
-BRV,Bremervörde
-BS,Braunschweig [Stadt]
-BSB,Bersenbrück
-BSK,Beeskow
-BT,Bayreuth
-BTF,Bitterfeld
-BU,Burgdorf
-BÜD,Büdingen [Oberhessen]
-BUL,Burglengenfeld
-BÜR,Büren [Westfalen]
-BÜS,Büsingen am Hochrhein
-BÜZ,Bützow
-BW,Bundes-Wasser- und Schiffahrtsverwaltung
-BWL,Baden-Württemberg [Landesregierung und Landtag]
-BYL,Bayern [Landesregierung und Landtag]
-BZ,Bautzen
-BZA,Bergzabern
+BRI,Kreis Brilon,Brilon,Nordrhein-Westfalen,auslaufend
+BRK,Landkreis Bad Kissingen,Bad Brückenau,Brandenburg,
+BRL,Landkreis Goslar,Braunlage (Harz),Niedersachsen,
+BRV,Landkreis Rotenburg (Wümme),Bremervörde,Niedersachsen,
+BS,Stadt Braunschweig,Braunschweig,Niedersachsen,
+BSB,Landkreis Osnabrück,Bersenbrück,Niedersachsen,
+BSK,Landkreis Oder-Spree,Beeskow,Brandenburg,
+BT,Stadt Bayreuth,Bayreuth,Bayern,
+BT,Landkreis Bayreuth,Bayreuth,Bayern,
+BTF,Landkreis Anhalt-Bitterfeld,Bitterfeld,Sachsen-Anhalt,
+BU,Landkreis Burgdorf,Burgdorf,Niedersachsen,auslaufend
+BÜD,Wetteraukreis,Büdingen,Hessen,
+BUL,Landkreis Amberg-Sulzbach,Burglengenfeld,Bayern,
+BUL,Landkreis Schwandorf,Burglengenfeld,Bayern,
+BÜR,Kreis Paderborn,Büren,Nordrhein-Westfalen,
+BÜS,"Gemeinde Büsingen am Hochrhein (Gemeinde im Landkreis Konstanz, deutsche Exklave in der Schweiz)",Büsingen am Hochrhein,Baden-Württemberg,
+BÜZ,Landkreis Rostock,Bützow,Mecklenburg-Vorpommern,
+BW,Wasserstraßen- und Schifffahrtsverwaltung des Bundes,Bundes-Wasserstraßen- und Schiffahrtsverwaltung,,
+BWL,"Baden-Württemberg, Landesregierung, Landtag und Polizei",Baden-Württembergischer Landtag,Baden-Württemberg,Landesregierung
+BYL,"Bayern, Landesregierung und Landtag",Bayerischer Landtag,Bayern,Landesregierung
+BZ,Landkreis Bautzen,Bautzen,Sachsen,
+BZA,Landkreis Bergzabern,Bergzabern,Rheinland-Pfalz,auslaufend
 C,Chemnitz
 CA,Calau
 CAS,Castrop-Rauxel [Stadt]
