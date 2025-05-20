@@ -6,7 +6,7 @@ AB,Stadt Aschaffenburg,Aschaffenburg,Bayern,
 AB,Landkreis Aschaffenburg,Aschaffenburg,Bayern,
 ABG,Landkreis Altenburger Land,Altenburg,Thüringen,
 ABI,Landkreis Anhalt-Bitterfeld,Anhalt-Bitterfeld,Sachsen-Anhalt,
-AC,Städteregion Aachen,Aachen / Aix la Chapelle,Nordrhein-Westfalen,
+AC,Städteregion Aachen,Aachen,Nordrhein-Westfalen,
 AE,Vogtlandkreis,Auerbach,Sachsen,
 AH,Kreis Borken,Ahaus,Nordrhein-Westfalen,
 AIB,Landkreis München,Bad Aibling,Bayern,
@@ -40,14 +40,14 @@ AW,Landkreis Ahrweiler,Ahrweiler,Rheinland-Pfalz,
 AZ,Landkreis Alzey-Worms,Alzey,Rheinland-Pfalz,
 AZE,Landkreis Anhalt-Bitterfeld,Landkreis Anhalt-Zerbst (bis Herbst 2007),Sachsen-Anhalt,
 B,Stadt Berlin,Berlin,Berlin,
-B,"Berlin, Senat und Abgeordnetenhaus",Berlin,Berlin,Landesregierung
+B,"Berlin, Senat und Abgeordnetenhaus",Berlin,Berlin,landesweit
 BA,Stadt Bamberg,Bamberg,Bayern,
 BA,Landkreis Bamberg,Bamberg,Bayern,
 BAD,Stadt Baden-Baden,Baden-Baden,Baden-Württemberg,
 BAR,Landkreis Barnim,Barnim,Brandenburg,
 BB,Landkreis Böblingen,Böblingen,Baden-Württemberg,
 BBG,Salzlandkreis,Bernburg (Saale),Sachsen-Anhalt,
-BBL,"Brandenburg, Landesregierung, Landtag und Polizei",Brandenburgische Landesregierung,Brandenburg,Landesregierung
+BBL,"Brandenburg, Landesregierung, Landtag und Polizei",Brandenburgische Landesregierung,Brandenburg,landesweit
 BC,Landkreis Biberach,Biberach an der Riß,Baden-Württemberg,
 BCH,Neckar-Odenwald-Kreis,Buchen (Odenwald),Baden-Württemberg,
 BD,"Bundestag, Bundesrat, Bundespräsidialamt, Bundesregierung, Bundesministerien, Bundesfinanzverwaltung und Bundesverfassungsgericht",Bundesdienst,bundesweit,
@@ -106,8 +106,8 @@ BÜR,Kreis Paderborn,Büren,Nordrhein-Westfalen,
 BÜS,"Gemeinde Büsingen am Hochrhein (Gemeinde im Landkreis Konstanz, deutsche Exklave in der Schweiz)",Büsingen am Hochrhein,Baden-Württemberg,
 BÜZ,Landkreis Rostock,Bützow,Mecklenburg-Vorpommern,
 BW,Wasserstraßen- und Schifffahrtsverwaltung des Bundes,Bundes-Wasserstraßen- und Schiffahrtsverwaltung,,
-BWL,"Baden-Württemberg, Landesregierung, Landtag und Polizei",Baden-Württembergischer Landtag,Baden-Württemberg,Landesregierung
-BYL,"Bayern, Landesregierung und Landtag",Bayerischer Landtag,Bayern,Landesregierung
+BWL,"Baden-Württemberg, Landesregierung, Landtag und Polizei",Baden-Württembergischer Landtag,Baden-Württemberg,landesweit
+BYL,"Bayern, Landesregierung und Landtag",Bayerischer Landtag,Bayern,landesweit
 BZ,Landkreis Bautzen,Bautzen,Sachsen,
 BZA,Landkreis Bergzabern,Bergzabern,Rheinland-Pfalz,auslaufend
 C,Stadt Chemnitz,Chemnitz,Sachsen,
@@ -124,38 +124,38 @@ COE,Kreis Coesfeld,Coesfeld,Nordrhein-Westfalen,
 CR,Landkreis Schwäbisch Hall,Crailsheim,Baden-Württemberg,
 CUX,Landkreis Cuxhaven,Cuxhaven,Niedersachsen,
 CW,Landkreis Calw,Calw,Baden-Württemberg,
-D,Düsseldorf [Stadt]
-DA,Darmstadt-Dieburg (Darmstadt)
-DA,Darmstadt
-DAH,Dachau
-DAN,Lüchow-Dannenberg (Lüchow)
-DAU,Daun [Eifel]
-DB,Deutsche Bundesbahn
-DBR,Bad Doberan
-DD,Dresden
-DE,Dessau
-DEG,Deggendorf
-DEL,Delmenhorst [Stadt]
-DGF,Dingolfing-Landau (Dingolfing)
-DH,Diepholz
-DI,Dieburg
-DIL,Dillkreis (Dillenburg)
-DIN,Dinslaken
-DIZ,Unterlahnkreis (Diez)
-DKB,Dinkelsbühl
-DL,Döbeln
-DLG,Dillingen [Donau]
-DM,Demmin
-DN,Düren
-DO,Dortmund [Stadt]
-DON,Donau-Ries (Donauwörth)
-DS,Donaueschingen
-DT,Lippe (Detmold)
-DU,Duisburg [Stadt]
-DUD,Duderstadt
-DÜW,Bad Dürkheim [Weinstraße]
-DW,Weißeritzkreis (Dippoldiswalde)
-DZ,Delitzsch
+D,Stadt Düsseldorf,Düsseldorf,Nordrhein-Westfalen,
+DA,Landkreis Darmstadt-Dieburg,Darmstadt,Baden-Württemberg,
+DA,Stadt Darmstadt,Darmstadt,Baden-Württemberg,
+DAH,Landkreis Dachau,Dachau,Bayern,
+DAN,Landkreis Lüchow-Dannenberg,Dannenberg (Elbe),Niedersachsen,
+DAU,Landkreis Vulkaneifel,Daun,Rheinland-Pfalz,
+DBR,Landkreis Rostock,Bad Doberan,Mecklenburg-Vorpommern,
+DD,Stadt Dresden,Dresden,Sachsen,
+DD,Polizei Sachsen,Dresden,Sachsen,landesweit
+DE,Stadt Dessau-Roßlau,Dessau,Sachsen-Anhalt,
+DEG,Landkreis Deggendorf,Deggendorf,Bayern,
+DEL,Stadt Delmenhorst,Delmenhorst,Niedersachsen,
+DGF,Landkreis Dingolfing-Landau,Dingolfing,Bayern,
+DH,Landkreis Diepholz,Diepholz,Niedersachsen,
+DI,Landkreis Darmstadt-Dieburg,Dieburg,Hessen,
+DIL,Lahn-Dill-Kreis,Dillenburg,Hessen,
+DIN,Kreis Wesel,Dinslaken,Nordrhein-Westfalen,
+DIZ,Rhein-Lahn-Kreis,Diez,Rheinland-Pfalz,
+DKB,Landkreis Ansbach,Dinkelsbühl,Bayern,
+DL,Landkreis Mittelsachsen,Döbeln,Sachsen,
+DLG,Landkreis Dillingen an der Donau,Dillingen an der Donau,Bayern,
+DM,Landkreis Mecklenburgische Seenplatte ohne die Stadt Neubrandenburg,Demmin,Mecklenburg-Vorpommern,
+DN,Kreis Düren,Düren,Nordrhein-Westfalen,
+DO,Stadt Dortmund,Dortmund,Nordrhein-Westfalen,
+DON,Landkreis Donau-Ries,Donauwörth,Bayern,
+DS,Schwarzwald-Baar-Kreis,Donaueschingen,Baden-Württemberg,
+DT,Kreis Lippe,Detmold,Nordrhein-Westfalen,auslaufend
+DU,Stadt Duisburg,Duisburg,Nordrhein-Westfalen,
+DUD,Landkreis Göttingen ohne die Stadt Göttingen,Duderstadt,Niedersachsen,
+DÜW,Landkreis Bad Dürkheim,Bad Dürkheim (Weinstraße),Rheinland-Pfalz,
+DW,Landkreis Sächsische Schweiz-Osterzgebirge,Dippoldiswalde,Sachsen,
+DZ,Landkreis Nordsachsen,Delitzsch,Sachsen,
 E,Essen [Stadt]
 EB,Eilenburg
 EBE,Ebersberg
