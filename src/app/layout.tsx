@@ -36,11 +36,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en">
       <body className="antialiased">
-        <main className={clsx(hind.variable, poppins.variable, "font-sans")}>
-          {children}
-        </main>
+        <main className={clsx(hind.variable, poppins.variable, "font-sans")}>{children}</main>
       </body>
     </html>
   );
