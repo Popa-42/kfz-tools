@@ -38,7 +38,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="antialiased">
-        <main className={clsx(hind.variable, poppins.variable, "font-sans")}>{children}</main>
+        <main className={clsx(hind.variable, poppins.variable, "flex items-center justify-center font-sans")}>
+          {children}
+        </main>
       </body>
     </html>
   );

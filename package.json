@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack -p 8080",
-    "format": "npx eslint --fix src/**/*.{js,ts,jsx,tsx} *.{js,mjs,jsx,ts,mts,tsx,json}",
+    "format": "npx eslint --fix src/**/*.{js,ts,jsx,tsx,cjs,cts,mjs,mts}",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
