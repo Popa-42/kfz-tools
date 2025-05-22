@@ -14,8 +14,67 @@ generator client {
 }
 
 model User {
-  id        String   @id @default(uuid()) @db.Uuid
-  email     String   @unique
-  name      String?
-  createdAt DateTime @default(now())
+  id        String            @id @default(uuid()) @db.Uuid
+  email     String
+  name      String
+  createdAt DateTime
+  progress  userKfzProgress[]
+}
+
+model userKfzProgress {
+  id           String    @id @default(uuid()) @db.Uuid
+  userId       String    @db.Uuid
+  kfzId        String    @db.Uuid
+  seenCount    Int?
+  lastSeen     DateTime?
+  correctCount Int?
+  lastCorrect  DateTime?
+
+  user User @relation(fields: [userId], references: [id])
+  kfz  Kfz  @relation(fields: [kfzId], references: [id])
+}
+
+model Kfz {
+  id               String  @id @default(uuid()) @db.Uuid
+  symbol           String
+  region           String
+  derivation       String
+  derivationMarked String
+  stateId          String  @db.Uuid
+  note             String?
+
+  state     State             @relation(fields: [stateId], references: [id])
+  progress  userKfzProgress[]
+  footnotes kfzToFootnote[]
+}
+
+model kfzToFootnote {
+  id       String @id @default(uuid()) @db.Uuid
+  kfzId    String @db.Uuid
+  footnote Int
+
+  kfz         Kfz      @relation(fields: [kfzId], references: [id])
+  footnoteRef Footnote @relation(fields: [footnote], references: [id])
+}
+
+model Footnote {
+  id   Int             @id @default(autoincrement())
+  text String
+  kfzs kfzToFootnote[]
+}
+
+model State {
+  id      String @id @default(uuid()) @db.Uuid
+  abbr    String
+  name    String
+  country String  @db.Uuid
+
+  countryRef Country @relation(fields: [country], references: [id])
+  kfzs       Kfz[]
+}
+
+model Country {
+  id     String  @id @default(uuid()) @db.Uuid
+  name   String
+  states State[]
 }
