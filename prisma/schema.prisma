@@ -13,68 +13,68 @@ generator client {
   provider = "prisma-client-js"
 }
 
-model User {
-  id        String            @id @default(uuid()) @db.Uuid
-  email     String
-  name      String
-  createdAt DateTime
-  progress  userKfzProgress[]
+model user {
+  id         String              @id @default(uuid()) @db.Uuid
+  email      String
+  name       String
+  created_at DateTime
+  progress   user_kfz_progress[]
 }
 
-model userKfzProgress {
-  id           String    @id @default(uuid()) @db.Uuid
-  userId       String    @db.Uuid
-  kfzId        String    @db.Uuid
-  seenCount    Int?
-  lastSeen     DateTime?
-  correctCount Int?
-  lastCorrect  DateTime?
+model user_kfz_progress {
+  id            String    @id @default(uuid()) @db.Uuid
+  user_id       String    @db.Uuid
+  kfz_id        String    @db.Uuid
+  seen_count    Int?
+  last_seen     DateTime?
+  correct_count Int?
+  last_correct  DateTime?
 
-  user User @relation(fields: [userId], references: [id])
-  kfz  Kfz  @relation(fields: [kfzId], references: [id])
+  user user @relation(fields: [user_id], references: [id])
+  kfz  kfz  @relation(fields: [kfz_id], references: [id])
 }
 
-model Kfz {
-  id               String  @id @default(uuid()) @db.Uuid
-  symbol           String
-  region           String
-  derivation       String
-  derivationMarked String
-  stateId          String  @db.Uuid
-  note             String?
+model kfz {
+  id                String  @id @default(uuid()) @db.Uuid
+  symbol            String
+  region            String
+  derivation        String?
+  derivation_marked String?
+  state_id          String? @db.Uuid
+  note              String?
 
-  state     State             @relation(fields: [stateId], references: [id])
-  progress  userKfzProgress[]
-  footnotes kfzToFootnote[]
+  state     state?              @relation(fields: [state_id], references: [id])
+  progress  user_kfz_progress[]
+  footnotes kfz_to_footnote[]
 }
 
-model kfzToFootnote {
+model kfz_to_footnote {
   id       String @id @default(uuid()) @db.Uuid
-  kfzId    String @db.Uuid
+  kfz_id   String @db.Uuid
   footnote Int
 
-  kfz         Kfz      @relation(fields: [kfzId], references: [id])
-  footnoteRef Footnote @relation(fields: [footnote], references: [id])
+  kfz         kfz      @relation(fields: [kfz_id], references: [id])
+  footnoteRef footnote @relation(fields: [footnote], references: [id])
 }
 
-model Footnote {
-  id   Int             @id @default(autoincrement())
+model footnote {
+  id   Int               @id @default(autoincrement())
   text String
-  kfzs kfzToFootnote[]
+  kfzs kfz_to_footnote[]
 }
 
-model State {
+model state {
   id      String @id @default(uuid()) @db.Uuid
   abbr    String
   name    String
-  country String  @db.Uuid
+  country String @db.Uuid
 
-  countryRef Country @relation(fields: [country], references: [id])
-  kfzs       Kfz[]
+  country_ref country @relation(fields: [country], references: [id])
+  kfzs        kfz[]
 }
 
-model Country {
+model country {
   id     String  @id @default(uuid()) @db.Uuid
   name   String
-  states State[]
+  states state[]
 }
