@@ -11,7 +11,7 @@ export async function POST(request: NextRequest) {
     }
 
     const newUser = await prisma.user.create({
-      data: { email, name },
+      data: { email, name: name ?? "", created_at: new Date() },
     });
 
     return NextResponse.json(newUser, { status: 201 });

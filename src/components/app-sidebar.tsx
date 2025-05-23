@@ -25,36 +25,37 @@ const data = {
       title: "Kennzeichen-Spiele",
       url: "#",
       icon: Dices,
+      isActive: true,
       items: [
         {
           title: "Kfz-Kennzeichen zuorden",
+          url: "/learn",
+        },
+        {
+          title: "Landkreis zuorden (WIP)",
           url: "#",
         },
         {
-          title: "Landkreis zuorden",
-          url: "#",
-        },
-        {
-          title: "Bundesland zuorden",
+          title: "Bundesland zuorden (WIP)",
           url: "#",
         },
       ],
     },
     {
-      title: "Alle Kennzeichen",
+      title: "Alle Kennzeichen (WIP)",
       url: "#",
       icon: List,
       items: [
         {
-          title: "Alphabetisch",
+          title: "Alphabetisch (WIP)",
           url: "#",
         },
         {
-          title: "Nach Landkreis",
+          title: "Nach Landkreis (WIP)",
           url: "#",
         },
         {
-          title: "Nach Bundesland",
+          title: "Nach Bundesland (WIP)",
           url: "#",
         },
       ],
