@@ -1,20 +1,9 @@
 "use client";
 
 import * as React from "react";
-import {
-  AudioWaveform,
-  BookOpen,
-  Bot,
-  Frame,
-  GalleryVerticalEnd,
-  Map,
-  PieChart,
-  Settings2,
-  SquareTerminal,
-} from "lucide-react";
+import { Dices, GalleryVerticalEnd, List, Search } from "lucide-react";
 
 import { NavMain } from "@/components/nav-main";
-import { NavProjects } from "@/components/nav-projects";
 import { NavUser } from "@/components/nav-user";
 import {
   Sidebar,
@@ -27,122 +16,48 @@ import {
 
 const data = {
   user: {
-    name: "shadcn",
-    email: "m@example.com",
-    avatar: "/avatars/shadcn.jpg",
+    name: "Popa",
+    email: "me@just-popa.de",
+    avatar: "/assets/images/popa.png",
   },
   navMain: [
     {
-      title: "Playground",
+      title: "Kennzeichen-Spiele",
       url: "#",
-      icon: SquareTerminal,
-      isActive: true,
+      icon: Dices,
       items: [
         {
-          title: "History",
+          title: "Kfz-Kennzeichen zuorden",
           url: "#",
         },
         {
-          title: "Starred",
+          title: "Landkreis zuorden",
           url: "#",
         },
         {
-          title: "Settings",
+          title: "Bundesland zuorden",
           url: "#",
         },
       ],
     },
     {
-      title: "Models",
+      title: "Alle Kennzeichen",
       url: "#",
-      icon: Bot,
+      icon: List,
       items: [
         {
-          title: "Genesis",
+          title: "Alphabetisch",
           url: "#",
         },
         {
-          title: "Explorer",
+          title: "Nach Landkreis",
           url: "#",
         },
         {
-          title: "Quantum",
+          title: "Nach Bundesland",
           url: "#",
         },
       ],
-    },
-    {
-      title: "Documentation",
-      url: "#",
-      icon: BookOpen,
-      items: [
-        {
-          title: "Introduction",
-          url: "#",
-        },
-        {
-          title: "Get Started",
-          url: "#",
-        },
-        {
-          title: "Tutorials",
-          url: "#",
-        },
-        {
-          title: "Changelog",
-          url: "#",
-        },
-      ],
-    },
-    {
-      title: "Settings",
-      url: "#",
-      icon: Settings2,
-      items: [
-        {
-          title: "General",
-          url: "#",
-        },
-        {
-          title: "Team",
-          url: "#",
-        },
-        {
-          title: "Billing",
-          url: "#",
-        },
-        {
-          title: "Limits",
-          url: "#",
-        },
-      ],
-    },
-  ],
-  projects: [
-    {
-      name: "Design Engineering",
-      url: "#",
-      icon: Frame,
-    },
-    {
-      name: "Sales & Marketing",
-      url: "#",
-      icon: PieChart,
-    },
-    {
-      name: "Travel",
-      url: "#",
-      icon: Map,
-    },
-    {
-      name: "Research & Development",
-      url: "#",
-      icon: AudioWaveform,
-    },
-    {
-      name: "Customer Support",
-      url: "#",
-      icon: Bot,
     },
   ],
 };
@@ -164,15 +79,13 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
             <GalleryVerticalEnd className="size-4" />
           </div>
           <div className="grid flex-1 text-left text-sm leading-tight">
-            <span className="truncate font-medium">shadcn</span>
-            <span className="truncate text-xs">Enterprise</span>
+            <span className="truncate font-medium">Kfz Learner</span>
+            <span className="truncate text-xs"></span>
           </div>
-          {/*<ChevronsUpDown className="ml-auto" />*/}
         </SidebarMenuButton>
       </SidebarHeader>
       <SidebarContent>
         <NavMain items={data.navMain} />
-        <NavProjects projects={data.projects} />
       </SidebarContent>
       <SidebarFooter>
         <NavUser user={data.user} />
