@@ -26,9 +26,9 @@ CREATE TABLE "kfz" (
     "id" UUID NOT NULL,
     "symbol" TEXT NOT NULL,
     "region" TEXT NOT NULL,
-    "derivation" TEXT NOT NULL,
-    "derivation_marked" TEXT NOT NULL,
-    "state_id" UUID NOT NULL,
+    "derivation" TEXT,
+    "derivation_marked" TEXT,
+    "state_id" UUID,
     "note" TEXT,
 
     CONSTRAINT "kfz_pkey" PRIMARY KEY ("id")
@@ -76,7 +76,7 @@ ALTER TABLE "user_kfz_progress" ADD CONSTRAINT "user_kfz_progress_user_id_fkey" 
 ALTER TABLE "user_kfz_progress" ADD CONSTRAINT "user_kfz_progress_kfz_id_fkey" FOREIGN KEY ("kfz_id") REFERENCES "kfz"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE "kfz" ADD CONSTRAINT "kfz_state_id_fkey" FOREIGN KEY ("state_id") REFERENCES "state"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE "kfz" ADD CONSTRAINT "kfz_state_id_fkey" FOREIGN KEY ("state_id") REFERENCES "state"("id") ON DELETE SET NULL ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE "kfz_to_footnote" ADD CONSTRAINT "kfz_to_footnote_kfz_id_fkey" FOREIGN KEY ("kfz_id") REFERENCES "kfz"("id") ON DELETE RESTRICT ON UPDATE CASCADE;

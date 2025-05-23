@@ -7,14 +7,18 @@ import pandas as pd
 
 dotenv.load_dotenv()
 
-DATABASE_URL = dotenv.get_key(dotenv.find_dotenv(), "DATABASE_URL")
+DB_USER = dotenv.get_key(dotenv.find_dotenv(), "DB_USER")
+DB_PASSWORD = dotenv.get_key(dotenv.find_dotenv(), "DB_PASSWORD")
+DB_NAME = dotenv.get_key(dotenv.find_dotenv(), "DB_NAME")
+DB_HOST = dotenv.get_key(dotenv.find_dotenv(), "DB_HOST")
+DB_PORT = int(dotenv.get_key(dotenv.find_dotenv(), "DB_PORT"))
 
 DB_CONFIG = {
-    "user": DATABASE_URL.split(":")[1].split("//")[1],
-    "password": DATABASE_URL.split(":")[2].split("@")[0],
-    "database": DATABASE_URL.split(":")[2].split("@")[1].split("/")[1],
-    "host": DATABASE_URL.split("@")[1].split(":")[0],
-    "port": int(DATABASE_URL.split(":")[2].split("@")[1].split("/")[0]),
+    "user": DB_USER,
+    "password": DB_PASSWORD,
+    "database": DB_NAME,
+    "host": DB_HOST,
+    "port": DB_PORT,
 }
 
 CSV_PATH = "kennzeichen.csv"
