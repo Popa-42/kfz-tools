@@ -28,11 +28,11 @@ const data = {
       isActive: true,
       items: [
         {
-          title: "Kfz-Kennzeichen zuorden",
+          title: "Landkreis zuorden",
           url: "/learn",
         },
         {
-          title: "Landkreis zuorden (WIP)",
+          title: "Kennzeichen zuorden (WIP)",
           url: "#",
         },
         {
