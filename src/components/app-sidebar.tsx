@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { Dices, GalleryVerticalEnd, List, Search } from "lucide-react";
+import { Dices, GalleryVerticalEnd, List } from "lucide-react";
 
 import { NavMain } from "@/components/nav-main";
 import { NavUser } from "@/components/nav-user";
