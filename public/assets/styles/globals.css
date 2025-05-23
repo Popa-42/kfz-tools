@@ -2,7 +2,6 @@
 @import "tw-animate-css";
 
 @import "./theme.css";
-@import "./typography.css";
 
 @custom-variant dark (&:where(.dark, .dark *));
 
