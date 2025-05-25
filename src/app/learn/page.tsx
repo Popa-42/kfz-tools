@@ -25,6 +25,8 @@ export default function LearnPage() {
   const [highlightDerivation, setHighlightDerivation] = useState(false);
   const [allKfz, setAllKfz] = useState<Kfz[]>([]);
 
+  const [correctKfzIndex, setCorrectKfzIndex] = useState<number>(0);
+
   useEffect(() => {
     async function fetchKfzData() {
       try {
@@ -34,6 +36,7 @@ export default function LearnPage() {
             throw new Error("Failed to fetch Kfz data");
           }
           const data: Kfz[] = await response.json();
+          data.sort(() => Math.random() - 0.5);
           setAllKfz(data);
         } else {
           const regions = filterStates.map((state) => state.value);
@@ -42,6 +45,7 @@ export default function LearnPage() {
             throw new Error("Failed to fetch Kfz data for selected states");
           }
           const data: Kfz[] = await response.json();
+          data.sort(() => Math.random() - 0.5);
           setAllKfz(data);
         }
       } catch (error) {
@@ -49,7 +53,7 @@ export default function LearnPage() {
       }
     }
 
-    fetchKfzData();
+    fetchKfzData().then((r) => r);
   }, [filterStates]);
 
   return (
@@ -106,26 +110,35 @@ export default function LearnPage() {
                 <div className="grid w-full items-center gap-4">
                   <div className="flex w-full items-center justify-center">
                     <span className="font-head w-fit rounded-md border px-4 py-2 text-center text-2xl font-extrabold">
-                      MYK
+                      {allKfz[correctKfzIndex]?.symbol || "???"}
                     </span>
                   </div>
                   <div className="grid w-full grid-cols-2 gap-2">
-                    <Button variant="outline" className="h-fit flex-col gap-0 px-4">
-                      <span className="text-wrap">Donnersbergkreis</span>
-                      <div className="text-muted-foreground text-xs text-wrap">Rockenhausen</div>
-                    </Button>
-                    <Button variant="outline" className="h-fit flex-col gap-0 px-4">
-                      <span className="text-wrap">Cochem-Zell</span>
-                      <div className="text-muted-foreground text-xs text-wrap">Zell (Mosel)</div>
-                    </Button>
-                    <Button variant="outline" className="h-fit flex-col gap-0 px-4">
-                      <span className="text-wrap">Landkreis Mayen-Koblenz</span>
-                      <div className="text-muted-foreground text-xs text-wrap">Mayen-Koblenz</div>
-                    </Button>
-                    <Button variant="outline" className="h-fit flex-col gap-0 px-4">
-                      <span className="text-wrap">Bad Dürkheim</span>
-                      <div className="text-muted-foreground text-xs text-wrap">Dürkheim an der Weinstraße</div>
-                    </Button>
+                    {/* Map the first four options as Buttons */}
+                    {allKfz.slice(0, 4).map((kfz) => (
+                      <Button key={kfz.id} variant="outline" className="h-fit flex-col gap-0 px-4">
+                        <span className="text-wrap">{kfz.region}</span>
+                        {details && (
+                          <div className="text-muted-foreground text-xs text-wrap">
+                            {highlightDerivation ? (
+                              <span>
+                                {kfz.derivation_marked.split("").map((char, idx) =>
+                                  /[A-ZÄÖÜ]/.test(char) ? (
+                                    <b className="text-primary" key={idx}>
+                                      {char}
+                                    </b>
+                                  ) : (
+                                    <span key={idx}>{char}</span>
+                                  ),
+                                )}
+                              </span>
+                            ) : (
+                              kfz.derivation
+                            )}
+                          </div>
+                        )}
+                      </Button>
+                    ))}
                   </div>
                 </div>
               </CardContent>
