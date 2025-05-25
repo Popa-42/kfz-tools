@@ -17,12 +17,40 @@ import { Switch } from "@/components/ui/switch";
 import { Label } from "@/components/ui/label";
 import { SelectSeparator } from "@/components/ui/select";
 import { ComboboxWithCheckbox } from "@/components/ui/combobox";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 export default function LearnPage() {
   const [filterStates, setFilterStates] = useState<Record<"value" | "label", string>[]>([]);
   const [details, setDetails] = useState(false);
   const [highlightDerivation, setHighlightDerivation] = useState(false);
+  const [allKfz, setAllKfz] = useState<Kfz[]>([]);
+
+  useEffect(() => {
+    async function fetchKfzData() {
+      try {
+        if (filterStates.length === 0) {
+          const response = await fetch("/api/kfz/get/all");
+          if (!response.ok) {
+            throw new Error("Failed to fetch Kfz data");
+          }
+          const data: Kfz[] = await response.json();
+          setAllKfz(data);
+        } else {
+          const regions = filterStates.map((state) => state.value);
+          const response = await fetch(`/api/kfz/get/${regions.join("/")}`);
+          if (!response.ok) {
+            throw new Error("Failed to fetch Kfz data for selected states");
+          }
+          const data: Kfz[] = await response.json();
+          setAllKfz(data);
+        }
+      } catch (error) {
+        console.error("Error fetching Kfz data:", error);
+      }
+    }
+
+    fetchKfzData();
+  }, [filterStates]);
 
   return (
     <SidebarProvider>
@@ -117,22 +145,22 @@ export default function LearnPage() {
                     noneFoundText="Keine Bundesländer gefunden"
                     searchPlaceholder="Bundesland suchen..."
                     options={[
-                      { value: "Brandenburg", label: "Brandenburg" },
-                      { value: "Berlin", label: "Berlin" },
-                      { value: "Baden-Württemberg", label: "Baden-Württemberg" },
-                      { value: "Bayern", label: "Bayern" },
-                      { value: "Bremen", label: "Bremen" },
-                      { value: "Hessen", label: "Hessen" },
-                      { value: "Hamburg", label: "Hamburg" },
-                      { value: "Mecklenburg-Vorpommern", label: "Mecklenburg-Vorpommern" },
-                      { value: "Niedersachsen", label: "Niedersachsen" },
-                      { value: "Nordrhein-Westfalen", label: "Nordrhein-Westfalen" },
-                      { value: "Rheinland-Pfalz", label: "Rheinland-Pfalz" },
-                      { value: "Saarland", label: "Saarland" },
-                      { value: "Sachsen", label: "Sachsen" },
-                      { value: "Sachsen-Anhalt", label: "Sachsen-Anhalt" },
-                      { value: "Schleswig-Holstein", label: "Schleswig-Holstein" },
-                      { value: "Thüringen", label: "Thüringen" },
+                      { value: "DE-BB", label: "Brandenburg" },
+                      { value: "DE-BE", label: "Berlin" },
+                      { value: "DE-BW", label: "Baden-Württemberg" },
+                      { value: "DE-BY", label: "Bayern" },
+                      { value: "DE-HB", label: "Bremen" },
+                      { value: "DE-HE", label: "Hessen" },
+                      { value: "DE-HH", label: "Hamburg" },
+                      { value: "DE-MV", label: "Mecklenburg-Vorpommern" },
+                      { value: "DE-NI", label: "Niedersachsen" },
+                      { value: "DE-NW", label: "Nordrhein-Westfalen" },
+                      { value: "DE-RP", label: "Rheinland-Pfalz" },
+                      { value: "DE-SH", label: "Schleswig-Holstein" },
+                      { value: "DE-SL", label: "Saarland" },
+                      { value: "DE-SN", label: "Sachsen" },
+                      { value: "DE-ST", label: "Sachsen-Anhalt" },
+                      { value: "DE-TH", label: "Thüringen" },
                     ]}
                     selected={filterStates}
                     onSelectedChange={setFilterStates}
@@ -172,6 +200,20 @@ export default function LearnPage() {
                       null,
                       2,
                     )}
+                  </pre>
+                </div>
+              </CardContent>
+            </Card>
+            <Card className="col-span-2">
+              <CardHeader>
+                <CardTitle>Mehr Debug-Zeug</CardTitle>
+                <CardDescription>Hier ist noch mehr Debug-Information zu sehen</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="grid gap-2">
+                  <Label htmlFor="debug-kfz">Kfz-Daten:</Label>
+                  <pre className="bg-muted max-h-50 overflow-auto rounded-md p-4 text-xs">
+                    {JSON.stringify(allKfz, null, 2)}
                   </pre>
                 </div>
               </CardContent>

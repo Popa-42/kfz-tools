@@ -119,11 +119,11 @@ function ComboboxWithCheckbox({
               {options.map((option) => (
                 <CommandItem
                   key={option.value}
-                  value={option.value}
-                  onSelect={(currentValue) => {
+                  value={option.label}
+                  onSelect={(currentLabel) => {
                     onSelectedChange(
-                      selected.some((f) => f.value === currentValue)
-                        ? selected.filter((f) => f.value !== currentValue)
+                      selected.some((f) => f.label === currentLabel)
+                        ? selected.filter((f) => f.label !== currentLabel)
                         : [...selected, option],
                     );
                   }}
