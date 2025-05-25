@@ -47,17 +47,8 @@ const eslintConfig = [
         "warn",
         {
           printWidth: 120,
-          lineBreakStyle: "unix",
           preferSingleLine: true,
           group: "newLine",
-        },
-      ],
-
-      // Prettier
-      "prettier/prettier": [
-        "error",
-        {
-          endOfLine: "lf",
         },
       ],
     },

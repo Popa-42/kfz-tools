@@ -1,0 +1,80 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model user {
+  id         String              @id @default(uuid()) @db.Uuid
+  email      String
+  name       String
+  created_at DateTime
+  progress   user_kfz_progress[]
+}
+
+model user_kfz_progress {
+  id            String    @id @default(uuid()) @db.Uuid
+  user_id       String    @db.Uuid
+  kfz_id        String    @db.Uuid
+  seen_count    Int?
+  last_seen     DateTime?
+  correct_count Int?
+  last_correct  DateTime?
+
+  user user @relation(fields: [user_id], references: [id])
+  kfz  kfz  @relation(fields: [kfz_id], references: [id])
+}
+
+model kfz {
+  id                String  @id @default(uuid()) @db.Uuid
+  symbol            String
+  region            String
+  derivation        String?
+  derivation_marked String?
+  state_id          String? @db.Uuid
+  note              String?
+
+  state     state?              @relation(fields: [state_id], references: [id])
+  progress  user_kfz_progress[]
+  footnotes kfz_to_footnote[]
+}
+
+model kfz_to_footnote {
+  id       String @id @default(uuid()) @db.Uuid
+  kfz_id   String @db.Uuid
+  footnote Int
+
+  kfz         kfz      @relation(fields: [kfz_id], references: [id])
+  footnoteRef footnote @relation(fields: [footnote], references: [id])
+}
+
+model footnote {
+  id   Int               @id @default(autoincrement())
+  text String
+  kfzs kfz_to_footnote[]
+}
+
+model state {
+  id      String @id @default(uuid()) @db.Uuid
+  abbr    String
+  name    String
+  country String @db.Uuid
+
+  country_ref country @relation(fields: [country], references: [id])
+  kfzs        kfz[]
+}
+
+model country {
+  id     String  @id @default(uuid()) @db.Uuid
+  name   String
+  states state[]
+}

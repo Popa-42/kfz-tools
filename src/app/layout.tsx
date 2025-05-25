@@ -2,36 +2,30 @@ import React from "react";
 import type { Metadata } from "next";
 import "../../public/assets/styles/globals.css";
 
-import { IBM_Plex_Mono, IBM_Plex_Sans, IBM_Plex_Serif } from "next/font/google";
+import { Hind, Poppins } from "next/font/google";
 import { clsx } from "clsx";
 
-const ibmPlexSans = IBM_Plex_Sans({
-  weight: ["100", "200", "300", "400", "500", "600", "700"],
+const hind = Hind({
+  weight: ["300", "400", "500", "600", "700"],
   subsets: ["latin"],
-  variable: "--font-ibm-plex-sans",
+  variable: "--font-hind",
 });
 
-const ibmPlexSerif = IBM_Plex_Serif({
-  weight: ["100", "200", "300", "400", "500", "600", "700"],
+const poppins = Poppins({
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
   subsets: ["latin"],
-  variable: "--font-ibm-plex-serif",
-});
-
-const ibmPlexMono = IBM_Plex_Mono({
-  weight: ["100", "200", "300", "400", "500", "600", "700"],
-  subsets: ["latin"],
-  variable: "--font-ibm-plex-mono",
+  variable: "--font-poppins",
 });
 
 export const metadata: Metadata = {
-  title: "Next.js Template",
-  description: "A Next.js template repository.",
+  title: "Kfz-Learner",
+  description: "Eine Webapp, um die deutschen Kfz-Kennzeichen zu lernen",
   icons: [
     {
       rel: "icon",
-      type: "image/x-icon",
-      sizes: "96x96",
-      url: "/assets/favicon.ico",
+      type: "image/png",
+      sizes: "250x250",
+      url: "/assets/images/favicon/logo-p.png",
     },
   ],
 };
@@ -44,7 +38,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="antialiased">
-        <main className={clsx(ibmPlexSans.variable, ibmPlexSerif.variable, ibmPlexMono.variable, "font-sans")}>
+        <main className={clsx(hind.variable, poppins.variable, "flex items-center justify-center font-sans")}>
           {children}
         </main>
       </body>

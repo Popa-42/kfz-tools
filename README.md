@@ -1,36 +1,46 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Kfz-Learner
 
-## Getting Started
+Eine Webapp, mit der man alle deutschen Kfz-Kennzeichen lernen kann.
 
-First, run the development server:
+## Installation
+
+### Vorraussetzungen
+
+- Node.js
+- npm
+- Git
+
+### Klonen und installieren
+
+Zunächst muss das Projekt geklont werden:
+
+```bash
+git clone https://github.com/Popa-42/kfz-kennzeichen-lernen/tree/create-base-logic
+cd kfz-kennzeichen-lernen
+```
+
+Danach müssen die Abhängigkeiten installiert werden:
+
+```bash
+npm install
+```
+
+### Starten
+
+Um die App im Entwicklermodus zu starten, führe folgenden Befehl aus:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Die App ist dann unter `http://localhost:8080` erreichbar.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Datenquelle
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Die Daten der Kfz-Kennzeichen stammen von [openpotato/kfz-kennzeichen](https://github.com/openpotato/kfz-kennzeichen)
+und sind unter der [Open Database License (ODbL)](public/assets/data/LICENSE) lizenziert. Die Daten wurden in das
+Projekt integriert und sind im Ordner `public/assets/data` zu finden.
 
-## Learn More
+## Lizenz
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Dieses Projekt ist unter der MIT-Lizenz lizenziert. Siehe die [LICENSE](LICENSE) Datei für Details.
