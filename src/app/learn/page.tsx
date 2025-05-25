@@ -27,6 +27,27 @@ export default function LearnPage() {
 
   const [correctKfzIndex, setCorrectKfzIndex] = useState<number>(0);
 
+  const [selectedId, setSelectedId] = useState<UUID | null>(null);
+  const [feedbackActive, setFeedbackActive] = useState<boolean>(false);
+
+  const handleButtonClick = (selectedKfzId: UUID) => {
+    if (feedbackActive) return;
+
+    setSelectedId(selectedKfzId);
+    setFeedbackActive(true);
+
+    setTimeout(() => {
+      const shuffled = [...allKfz].sort(() => Math.random() - 0.5);
+      setAllKfz(shuffled);
+
+      const newCorrectIndex = Math.floor(Math.random() * 4);
+      setCorrectKfzIndex(newCorrectIndex);
+
+      setSelectedId(null);
+      setFeedbackActive(false);
+    }, 1000);
+  };
+
   useEffect(() => {
     async function fetchKfzData() {
       try {
@@ -116,7 +137,14 @@ export default function LearnPage() {
                   <div className="grid w-full grid-cols-2 gap-2">
                     {/* Map the first four options as Buttons */}
                     {allKfz.slice(0, 4).map((kfz) => (
-                      <Button key={kfz.id} variant="outline" className="h-fit flex-col gap-0 px-4">
+                      <Button
+                        key={kfz.id}
+                        variant={
+                          feedbackActive ? (kfz.id === allKfz[correctKfzIndex].id ? "correct" : "wrong") : "outline"
+                        }
+                        className="h-fit flex-col gap-0 px-4"
+                        onClick={() => handleButtonClick(kfz.id)}
+                      >
                         <span className="text-wrap">{kfz.region}</span>
                         {details && (
                           <div className="text-muted-foreground text-xs text-wrap">
