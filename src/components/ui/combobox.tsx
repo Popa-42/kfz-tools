@@ -1,27 +1,44 @@
+"use client";
+
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { Button } from "@/components/ui/button";
 import { Check, CheckIcon, ChevronsUpDown } from "lucide-react";
 import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from "@/components/ui/command";
-import * as React from "react";
+import React, { useState } from "react";
 import { cn } from "@/lib/utils";
 
 type ComboboxWithCheckboxProps = {
   options: Record<"value" | "label", string>[];
-  placeholder?: string;
+  placeholder: string;
   searchPlaceholder?: string;
   noneFoundText?: string;
+  className?: string;
+  id?: string;
 };
 
-function Combobox({ options, placeholder, searchPlaceholder, noneFoundText }: ComboboxWithCheckboxProps) {
-  const [open, setOpen] = React.useState(false);
-  const [value, setValue] = React.useState("");
+function Combobox({
+  options,
+  placeholder,
+  searchPlaceholder = "Type to search…",
+  noneFoundText = "No options found",
+  className,
+  id,
+}: ComboboxWithCheckboxProps) {
+  const [open, setOpen] = useState(false);
+  const [value, setValue] = useState("");
 
   return (
     <Popover open={open} onOpenChange={setOpen}>
       <PopoverTrigger asChild>
-        <Button variant="outline" role="combobox" aria-expanded={open} className="w-[200px] justify-between">
+        <Button
+          id={id}
+          variant="outline"
+          role="combobox"
+          aria-expanded={open}
+          className={cn("relative min-w-50", className)}
+        >
           {value ? options.find((option) => option.value === value)?.label : placeholder}
-          <ChevronsUpDown className="opacity-50" />
+          <ChevronsUpDown className="text-muted-foreground absolute right-2" />
         </Button>
       </PopoverTrigger>
       <PopoverContent className="w-[200px] p-0">
@@ -51,18 +68,33 @@ function Combobox({ options, placeholder, searchPlaceholder, noneFoundText }: Co
   );
 }
 
-function ComboboxWithCheckbox({ options, placeholder, searchPlaceholder, noneFoundText }: ComboboxWithCheckboxProps) {
+function ComboboxWithCheckbox({
+  options,
+  placeholder,
+  searchPlaceholder = "Type to search…",
+  noneFoundText = "No options found",
+  className,
+  id,
+}: ComboboxWithCheckboxProps) {
   const [open, setOpen] = React.useState(false);
   const [selectedFrameworks, setSelectedFrameworks] = React.useState<Record<"value" | "label", string>[]>([]);
 
   return (
     <Popover open={open} onOpenChange={setOpen}>
       <PopoverTrigger asChild>
-        <Button variant="outline" role="combobox" aria-expanded={open} className="w-fit min-w-[280px] justify-between">
-          {selectedFrameworks.length > 0
-            ? selectedFrameworks.map((framework) => framework.label).join(", ")
-            : placeholder}
-          <ChevronsUpDown className="text-muted-foreground" />
+        <Button
+          id={id}
+          variant="outline"
+          role="combobox"
+          aria-expanded={open}
+          className={cn("relative min-w-50 justify-start pr-8!", className)}
+        >
+          <span className="truncate">
+            {selectedFrameworks.length > 0
+              ? selectedFrameworks.map((framework) => framework.label).join(", ")
+              : placeholder}
+          </span>
+          <ChevronsUpDown className="text-muted-foreground absolute right-2" />
         </Button>
       </PopoverTrigger>
       <PopoverContent className="w-[300px] p-0" align="start">
