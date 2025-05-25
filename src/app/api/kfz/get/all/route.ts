@@ -1,7 +1,9 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
 import prisma from "@/lib/prisma";
 
-export async function GET(req: NextRequest) {
+export const dynamic = "force-static";
+
+export async function GET() {
   try {
     const kfzData = await prisma.kfz.findMany({
       orderBy: { symbol: "asc" },

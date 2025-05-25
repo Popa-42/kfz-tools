@@ -25,3 +25,5 @@ type Kfz = {
     };
   }[];
 };
+
+export type { UUID, State, Kfz };

@@ -18,6 +18,7 @@ import { Label } from "@/components/ui/label";
 import { SelectSeparator } from "@/components/ui/select";
 import { ComboboxWithCheckbox } from "@/components/ui/combobox";
 import React, { useEffect, useState } from "react";
+import { Kfz, UUID } from "@/app/types";
 
 export default function LearnPage() {
   const [filterStates, setFilterStates] = useState<Record<"value" | "label", string>[]>([]);
@@ -27,7 +28,7 @@ export default function LearnPage() {
 
   const [correctKfzIndex, setCorrectKfzIndex] = useState<number>(0);
 
-  const [selectedId, setSelectedId] = useState<UUID | null>(null);
+  const [, setSelectedId] = useState<UUID | null>(null);
   const [feedbackActive, setFeedbackActive] = useState<boolean>(false);
 
   const handleButtonClick = (selectedKfzId: UUID) => {
