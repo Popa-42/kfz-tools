@@ -1,6 +1,5 @@
 import { AppSidebar } from "@/components/app-sidebar";
 import { SidebarInset, SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
-import { Separator } from "@/components/ui/separator";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -14,7 +13,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { Switch } from "@/components/ui/switch";
 import { Label } from "@/components/ui/label";
-import { Select, SelectTrigger } from "@/components/ui/select";
+import { SelectSeparator } from "@/components/ui/select";
+import { ComboboxWithCheckbox } from "@/components/ui/combobox";
 
 export default function LearnPage() {
   return (
@@ -29,7 +29,7 @@ export default function LearnPage() {
         >
           <div className="flex items-center gap-2 px-4">
             <SidebarTrigger className="-ml-1" />
-            <Separator orientation="vertical" className="mr-2 h-4" />
+            <SelectSeparator />
             <Breadcrumb>
               <BreadcrumbList>
                 <BreadcrumbItem className="hidden md:block">
@@ -74,7 +74,7 @@ export default function LearnPage() {
                       MYK
                     </span>
                   </div>
-                  <div className="grid w-full grid-cols-2 gap-4">
+                  <div className="grid w-full grid-cols-2 gap-2">
                     <Button variant="outline" className="h-fit flex-col gap-0 px-4">
                       <span className="text-wrap">Donnersbergkreis</span>
                       <div className="text-muted-foreground text-xs text-wrap">Rockenhausen</div>
@@ -101,17 +101,41 @@ export default function LearnPage() {
                 <CardDescription>Hier kannst du die Einstellungen anpassen</CardDescription>
               </CardHeader>
               <CardContent>
-                <div className="flex flex-col gap-4">
-                  <Select>
-                    <SelectTrigger className="w-full">Bundesland</SelectTrigger>
-                  </Select>
+                <div className="flex flex-col gap-2">
+                  <Label htmlFor="state-filter">Filtern nach Bundesland</Label>
+                  <ComboboxWithCheckbox
+                    id="state-filter"
+                    className="w-full"
+                    placeholder="Alle Bundesländer"
+                    noneFoundText="Keine Bundesländer gefunden"
+                    searchPlaceholder="Bundesland suchen..."
+                    options={[
+                      { value: "Brandenburg", label: "Brandenburg" },
+                      { value: "Berlin", label: "Berlin" },
+                      { value: "Baden-Württemberg", label: "Baden-Württemberg" },
+                      { value: "Bayern", label: "Bayern" },
+                      { value: "Bremen", label: "Bremen" },
+                      { value: "Hessen", label: "Hessen" },
+                      { value: "Hamburg", label: "Hamburg" },
+                      { value: "Mecklenburg-Vorpommern", label: "Mecklenburg-Vorpommern" },
+                      { value: "Niedersachsen", label: "Niedersachsen" },
+                      { value: "Nordrhein-Westfalen", label: "Nordrhein-Westfalen" },
+                      { value: "Rheinland-Pfalz", label: "Rheinland-Pfalz" },
+                      { value: "Saarland", label: "Saarland" },
+                      { value: "Sachsen", label: "Sachsen" },
+                      { value: "Sachsen-Anhalt", label: "Sachsen-Anhalt" },
+                      { value: "Schleswig-Holstein", label: "Schleswig-Holstein" },
+                      { value: "Thüringen", label: "Thüringen" },
+                    ]}
+                  />
+
                   <div className="flex items-center space-x-2">
                     <Switch id="details" />
-                    <Label htmlFor="airplane-mode">Details einblenden</Label>
+                    <Label htmlFor="details">Details einblenden</Label>
                   </div>
                   <div className="flex items-center space-x-2">
-                    <Switch id="airplane-mode" disabled />
-                    <Label htmlFor="airplane-mode">Herleitung hervorheben</Label>
+                    <Switch id="highlight-derivation" disabled />
+                    <Label htmlFor="highlight-derivation">Herleitung hervorheben</Label>
                   </div>
                 </div>
               </CardContent>
