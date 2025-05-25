@@ -1,3 +1,5 @@
+"use client";
+
 import { AppSidebar } from "@/components/app-sidebar";
 import { SidebarInset, SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 import {
@@ -15,8 +17,13 @@ import { Switch } from "@/components/ui/switch";
 import { Label } from "@/components/ui/label";
 import { SelectSeparator } from "@/components/ui/select";
 import { ComboboxWithCheckbox } from "@/components/ui/combobox";
+import React, { useState } from "react";
 
 export default function LearnPage() {
+  const [filterStates, setFilterStates] = useState<Record<"value" | "label", string>[]>([]);
+  const [details, setDetails] = useState(false);
+  const [highlightDerivation, setHighlightDerivation] = useState(false);
+
   return (
     <SidebarProvider>
       <AppSidebar />
@@ -105,7 +112,7 @@ export default function LearnPage() {
                   <Label htmlFor="state-filter">Filtern nach Bundesland</Label>
                   <ComboboxWithCheckbox
                     id="state-filter"
-                    className="w-full"
+                    className="mb-4 w-full"
                     placeholder="Alle Bundesländer"
                     noneFoundText="Keine Bundesländer gefunden"
                     searchPlaceholder="Bundesland suchen..."
@@ -127,16 +134,45 @@ export default function LearnPage() {
                       { value: "Schleswig-Holstein", label: "Schleswig-Holstein" },
                       { value: "Thüringen", label: "Thüringen" },
                     ]}
+                    selected={filterStates}
+                    onSelectedChange={setFilterStates}
                   />
 
                   <div className="flex items-center space-x-2">
-                    <Switch id="details" />
+                    <Switch id="details" checked={details} onCheckedChange={setDetails} />
                     <Label htmlFor="details">Details einblenden</Label>
                   </div>
                   <div className="flex items-center space-x-2">
-                    <Switch id="highlight-derivation" disabled />
+                    <Switch
+                      id="highlight-derivation"
+                      disabled={!details}
+                      checked={highlightDerivation}
+                      onCheckedChange={setHighlightDerivation}
+                    />
                     <Label htmlFor="highlight-derivation">Herleitung hervorheben</Label>
                   </div>
+                </div>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader>
+                <CardTitle>Debug</CardTitle>
+                <CardDescription>Hier kannst du Debug-Informationen sehen</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="grid gap-2">
+                  <Label htmlFor="debug-details">Details:</Label>
+                  <pre className="bg-muted rounded-md p-4 text-xs">
+                    {JSON.stringify(
+                      {
+                        filterStates,
+                        details,
+                        highlightDerivation,
+                      },
+                      null,
+                      2,
+                    )}
+                  </pre>
                 </div>
               </CardContent>
             </Card>

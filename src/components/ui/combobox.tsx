@@ -7,6 +7,17 @@ import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, Command
 import React, { useState } from "react";
 import { cn } from "@/lib/utils";
 
+type ComboboxProps = {
+  options: Record<"value" | "label", string>[];
+  placeholder: string;
+  searchPlaceholder?: string;
+  noneFoundText?: string;
+  className?: string;
+  id?: string;
+  value: string;
+  onValueChange: (value: string) => void;
+};
+
 type ComboboxWithCheckboxProps = {
   options: Record<"value" | "label", string>[];
   placeholder: string;
@@ -14,6 +25,8 @@ type ComboboxWithCheckboxProps = {
   noneFoundText?: string;
   className?: string;
   id?: string;
+  selected: Record<"value" | "label", string>[];
+  onSelectedChange: (selectedOptions: Record<"value" | "label", string>[]) => void;
 };
 
 function Combobox({
@@ -23,9 +36,10 @@ function Combobox({
   noneFoundText = "No options found",
   className,
   id,
-}: ComboboxWithCheckboxProps) {
+  value,
+  onValueChange,
+}: ComboboxProps) {
   const [open, setOpen] = useState(false);
-  const [value, setValue] = useState("");
 
   return (
     <Popover open={open} onOpenChange={setOpen}>
@@ -52,7 +66,7 @@ function Combobox({
                   key={option.value}
                   value={option.value}
                   onSelect={(currentValue) => {
-                    setValue(currentValue === value ? "" : currentValue);
+                    onValueChange(currentValue === value ? "" : currentValue);
                     setOpen(false);
                   }}
                 >
@@ -75,9 +89,10 @@ function ComboboxWithCheckbox({
   noneFoundText = "No options found",
   className,
   id,
+  selected,
+  onSelectedChange,
 }: ComboboxWithCheckboxProps) {
   const [open, setOpen] = React.useState(false);
-  const [selectedFrameworks, setSelectedFrameworks] = React.useState<Record<"value" | "label", string>[]>([]);
 
   return (
     <Popover open={open} onOpenChange={setOpen}>
@@ -90,9 +105,7 @@ function ComboboxWithCheckbox({
           className={cn("relative min-w-50 justify-start pr-8!", className)}
         >
           <span className="truncate">
-            {selectedFrameworks.length > 0
-              ? selectedFrameworks.map((framework) => framework.label).join(", ")
-              : placeholder}
+            {selected.length > 0 ? selected.map((framework) => framework.label).join(", ") : placeholder}
           </span>
           <ChevronsUpDown className="text-muted-foreground absolute right-2" />
         </Button>
@@ -108,10 +121,10 @@ function ComboboxWithCheckbox({
                   key={option.value}
                   value={option.value}
                   onSelect={(currentValue) => {
-                    setSelectedFrameworks(
-                      selectedFrameworks.some((f) => f.value === currentValue)
-                        ? selectedFrameworks.filter((f) => f.value !== currentValue)
-                        : [...selectedFrameworks, option],
+                    onSelectedChange(
+                      selected.some((f) => f.value === currentValue)
+                        ? selected.filter((f) => f.value !== currentValue)
+                        : [...selected, option],
                     );
                   }}
                 >
@@ -122,7 +135,7 @@ function ComboboxWithCheckbox({
                       data-[selected=true]:text-primary-foreground data-[selected=true]:*:[svg]:opacity-100
                       *:[svg]:opacity-0
                     `}
-                    data-selected={selectedFrameworks.some((f) => f.value === option.value)}
+                    data-selected={selected.some((f) => f.value === option.value)}
                   >
                     <CheckIcon className="size-3.5 text-current" />
                   </div>
