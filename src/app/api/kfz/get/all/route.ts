@@ -1,30 +1,11 @@
 import { NextResponse } from "next/server";
-import prisma from "@/lib/prisma";
 
 export const dynamic = "force-static";
 
 export async function GET() {
   try {
-    const kfzData = await prisma.kfz.findMany({
-      orderBy: { symbol: "asc" },
-      include: {
-        state: {
-          select: {
-            abbr: true,
-            name: true,
-          },
-        },
-        footnotes: {
-          include: {
-            footnoteRef: {
-              select: {
-                text: true,
-              },
-            },
-          },
-        },
-      },
-    });
+    // TODO: Implement database logic
+    const kfzData: Record<string, string>[] = [];
 
     if (kfzData.length === 0) {
       return NextResponse.json({ error: "No Kfz data found for the specified region." }, { status: 404 });

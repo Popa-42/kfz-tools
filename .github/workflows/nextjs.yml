@@ -35,7 +35,6 @@ jobs:
           file: Dockerfile
           push: true
           build-args: |
-            SKIP_PRISMA=true
             DATABASE_URL=${{ secrets.DATABASE_URL }}
           tags: |
             ghcr.io/popa-42/kfz-tools:latest
