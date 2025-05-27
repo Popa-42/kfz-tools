@@ -1,5 +1,4 @@
 import prisma from "@/lib/prisma";
-import { Prisma } from "@prisma/client";
 import { NextRequest, NextResponse } from "next/server";
 
 export async function POST(request: NextRequest) {
@@ -16,9 +15,6 @@ export async function POST(request: NextRequest) {
 
     return NextResponse.json(newUser, { status: 201 });
   } catch (error) {
-    if (error instanceof Prisma.PrismaClientKnownRequestError && error.code === "P2002") {
-      return NextResponse.json({ error: "Email already exists." }, { status: 409 });
-    }
     console.error("Error creating user:", error);
     return NextResponse.json({ error: "Internal server error." }, { status: 500 });
   }

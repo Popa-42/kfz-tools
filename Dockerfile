@@ -37,6 +37,17 @@ COPY . .
 # Uncomment the following line in case you want to disable telemetry during the build.
 # ENV NEXT_TELEMETRY_DISABLED=1
 
+# Initialize Prisma client
+RUN apt-get update -y && apt-get install -y openssl
+
+ARG DATABASE_URL
+ENV DATABASE_URL=$DATABASE_URL
+RUN if [ -f prisma/schema.prisma ]; then \
+      npx prisma generate; \
+    else \
+      echo "No Prisma schema found, skipping Prisma client generation."; \
+    fi
+
 RUN \
   if [ -f yarn.lock ]; then yarn run build; \
   elif [ -f package-lock.json ]; then npm run build; \
@@ -54,6 +65,9 @@ WORKDIR /app
 ENV NODE_ENV=production
 # Uncomment the following line in case you want to disable telemetry during runtime.
 # ENV NEXT_TELEMETRY_DISABLED=1
+
+ARG DATABASE_URL
+ENV DATABASE_URL=$DATABASE_URL
 
 RUN addgroup --system --gid 1001 nodejs
 RUN adduser --system --uid 1001 nextjs

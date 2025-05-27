@@ -14,7 +14,7 @@ generator client {
 }
 
 model user {
-  id         String              @id @default(uuid()) @db.Uuid
+  id         String              @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
   email      String
   name       String
   created_at DateTime
@@ -22,7 +22,7 @@ model user {
 }
 
 model user_kfz_progress {
-  id            String    @id @default(uuid()) @db.Uuid
+  id            String    @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
   user_id       String    @db.Uuid
   kfz_id        String    @db.Uuid
   seen_count    Int?
@@ -35,12 +35,12 @@ model user_kfz_progress {
 }
 
 model kfz {
-  id                String  @id @default(uuid()) @db.Uuid
+  id                String  @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
   symbol            String
   region            String
   derivation        String?
   derivation_marked String?
-  state_id          String? @db.Uuid
+  state_id          String?
   note              String?
 
   state     state?              @relation(fields: [state_id], references: [id])
@@ -49,7 +49,7 @@ model kfz {
 }
 
 model kfz_to_footnote {
-  id       String @id @default(uuid()) @db.Uuid
+  id       String @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
   kfz_id   String @db.Uuid
   footnote Int
 
@@ -64,7 +64,7 @@ model footnote {
 }
 
 model state {
-  id      String @id @default(uuid()) @db.Uuid
+  id      String @id
   abbr    String
   name    String
   country String @db.Uuid
@@ -74,7 +74,7 @@ model state {
 }
 
 model country {
-  id     String  @id @default(uuid()) @db.Uuid
+  id     String  @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
   name   String
   states state[]
 }

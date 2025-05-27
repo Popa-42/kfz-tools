@@ -12,6 +12,8 @@ jobs:
       contents: read                            # for checkout
       packages: write                           # to push to GHCR
 
+    env:
+      DATABASE_URL: ${{ secrets.DATABASE_URL }}
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
@@ -32,6 +34,9 @@ jobs:
           context: .
           file: Dockerfile
           push: true
+          build-args: |
+            SKIP_PRISMA=true
+            DATABASE_URL=${{ secrets.DATABASE_URL }}
           tags: |
             ghcr.io/popa-42/kfz-tools:latest
             ghcr.io/popa-42/kfz-tools:${{ github.sha }}
