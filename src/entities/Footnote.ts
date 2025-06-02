@@ -1,0 +1,11 @@
+import { Collection, Entity, ManyToMany, Property } from "@mikro-orm/core";
+import { _BaseEntity, Kfz } from "@/entities";
+
+@Entity({ tableName: "footnote" })
+export class Footnote extends _BaseEntity {
+  @Property({ nullable: false, type: "text" })
+  text!: string;
+
+  @ManyToMany(() => Kfz, "footnotes")
+  kfzs = new Collection<Kfz>(this);
+}
