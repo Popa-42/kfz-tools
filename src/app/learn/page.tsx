@@ -131,7 +131,7 @@ export default function LearnPage() {
               <CardContent>
                 <div className="grid w-full items-center gap-4">
                   <div className="flex w-full items-center justify-center">
-                    <span className="font-head w-fit rounded-md border px-4 py-2 text-center text-2xl font-extrabold">
+                    <span className="w-fit rounded-md border px-4 py-2 text-center font-head text-2xl font-extrabold">
                       {allKfz[correctKfzIndex]?.symbol || "???"}
                     </span>
                   </div>
@@ -148,7 +148,7 @@ export default function LearnPage() {
                       >
                         <span className="text-wrap">{kfz.region}</span>
                         {details && (
-                          <div className="text-muted-foreground text-xs text-wrap">
+                          <div className="text-xs text-wrap text-muted-foreground">
                             {highlightDerivation ? (
                               <span>
                                 {kfz.derivation_marked.split("").map((char, idx) =>
@@ -232,7 +232,7 @@ export default function LearnPage() {
               <CardContent>
                 <div className="grid gap-2">
                   <Label htmlFor="debug-details">Details:</Label>
-                  <pre className="bg-muted rounded-md p-4 text-xs">
+                  <pre className="rounded-md bg-muted p-4 text-xs">
                     {JSON.stringify(
                       {
                         filterStates,
@@ -254,7 +254,7 @@ export default function LearnPage() {
               <CardContent>
                 <div className="grid gap-2">
                   <Label htmlFor="debug-kfz">Kfz-Daten:</Label>
-                  <pre className="bg-muted max-h-50 overflow-auto rounded-md p-4 text-xs">
+                  <pre className="max-h-50 overflow-auto rounded-md bg-muted p-4 text-xs">
                     {JSON.stringify(allKfz, null, 2)}
                   </pre>
                 </div>

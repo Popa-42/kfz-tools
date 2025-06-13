@@ -6,13 +6,13 @@ import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
   `
-    focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px]
-    aria-invalid:ring-destructive/20 aria-invalid:border-destructive
-    dark:aria-invalid:ring-destructive/40
     inline-flex shrink-0 cursor-pointer items-center justify-center gap-2 rounded-md text-sm font-medium
     whitespace-nowrap transition-all outline-none
+    focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50
     active:scale-[0.98]
     disabled:cursor-not-allowed disabled:opacity-50
+    aria-invalid:border-destructive aria-invalid:ring-destructive/20
+    dark:aria-invalid:ring-destructive/40
     [&_svg]:pointer-events-none [&_svg]:shrink-0
     [&_svg:not([class*='size-'])]:size-4
   `,
@@ -24,20 +24,20 @@ const buttonVariants = cva(
           bg-destructive text-white shadow-xs
           hover:bg-destructive/90
           focus-visible:ring-destructive/20
-          dark:focus-visible:ring-destructive/40 dark:bg-destructive/60
+          dark:bg-destructive/60 dark:focus-visible:ring-destructive/40
         `,
         outline: `
-          bg-background border shadow-xs
+          border bg-background shadow-xs
           hover:bg-accent hover:text-accent-foreground
-          dark:bg-input/30 dark:border-input dark:hover:bg-input/50
+          dark:border-input dark:bg-input/30 dark:hover:bg-input/50
         `,
         correct: `
-          bg-primary/30 border-primary/50 border shadow-xs
-          dark:bg-primary/30 dark:border-primary dark:hover:bg-primary/50
+          border border-primary/50 bg-primary/30 shadow-xs
+          dark:border-primary dark:bg-primary/30 dark:hover:bg-primary/50
         `,
         wrong: `
-          bg-destructive/30 border-destructive/50 border shadow-xs
-          dark:bg-destructive/30 dark:border-destructive dark:hover:bg-destructive/50
+          border border-destructive/50 bg-destructive/30 shadow-xs
+          dark:border-destructive dark:bg-destructive/30 dark:hover:bg-destructive/50
         `,
         secondary: "bg-secondary text-secondary-foreground shadow-xs hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50",

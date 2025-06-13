@@ -52,7 +52,7 @@ function Combobox({
           className={cn("relative min-w-50", className)}
         >
           {value ? options.find((option) => option.value === value)?.label : placeholder}
-          <ChevronsUpDown className="text-muted-foreground absolute right-2" />
+          <ChevronsUpDown className="absolute right-2 text-muted-foreground" />
         </Button>
       </PopoverTrigger>
       <PopoverContent className="w-[200px] p-0">
@@ -107,7 +107,7 @@ function ComboboxWithCheckbox({
           <span className="truncate">
             {selected.length > 0 ? selected.map((framework) => framework.label).join(", ") : placeholder}
           </span>
-          <ChevronsUpDown className="text-muted-foreground absolute right-2" />
+          <ChevronsUpDown className="absolute right-2 text-muted-foreground" />
         </Button>
       </PopoverTrigger>
       <PopoverContent className="w-[300px] p-0" align="start">
@@ -130,7 +130,7 @@ function ComboboxWithCheckbox({
                 >
                   <div
                     className={`
-                      border-input pointer-events-none size-4 shrink-0 rounded-[4px] border transition-all select-none
+                      pointer-events-none size-4 shrink-0 rounded-[4px] border border-input transition-all select-none
                       data-[selected=true]:border-primary data-[selected=true]:bg-primary
                       data-[selected=true]:text-primary-foreground data-[selected=true]:*:[svg]:opacity-100
                       *:[svg]:opacity-0
