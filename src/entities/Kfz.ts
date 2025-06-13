@@ -1,5 +1,6 @@
 import { Collection, Entity, ManyToMany, ManyToOne, Property } from "@mikro-orm/core";
-import { _BaseEntity, Footnote, State } from "@/entities";
+import { Footnote, State } from "@/entities";
+import { _BaseEntity } from "./Base";
 
 @Entity({ tableName: "kfz" })
 export class Kfz extends _BaseEntity {
@@ -15,7 +16,7 @@ export class Kfz extends _BaseEntity {
   @Property()
   derivationMarked!: string;
 
-  @Property()
+  @Property({ nullable: true })
   note?: string;
 
   @ManyToOne(() => State)

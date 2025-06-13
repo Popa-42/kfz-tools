@@ -1,5 +1,6 @@
 import { Collection, Entity, ManyToMany, Property } from "@mikro-orm/core";
-import { _BaseEntity, Kfz } from "@/entities";
+import { _BaseEntity } from "./Base";
+import { Kfz } from "@/entities";
 
 @Entity({ tableName: "footnote" })
 export class Footnote extends _BaseEntity {
