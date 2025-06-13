@@ -13,6 +13,6 @@ export class State extends _BaseEntity {
   @ManyToOne(() => Country)
   country!: Country;
 
-  @OneToMany(() => Kfz, "state")
+  @OneToMany(() => Kfz, (kfz) => kfz.state)
   kfzs = new Collection<Kfz>(this);
 }

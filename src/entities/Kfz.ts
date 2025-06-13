@@ -22,6 +22,6 @@ export class Kfz extends _BaseEntity {
   @ManyToOne(() => State)
   state!: State;
 
-  @ManyToMany(() => Footnote, "kfzs", { owner: true })
+  @ManyToMany(() => Footnote, (kfz) => kfz.kfzs, { owner: true })
   footnotes = new Collection<Footnote>(this);
 }

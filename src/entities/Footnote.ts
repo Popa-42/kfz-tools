@@ -7,6 +7,6 @@ export class Footnote extends _BaseEntity {
   @Property({ nullable: false, type: "text" })
   text!: string;
 
-  @ManyToMany(() => Kfz, "footnotes")
+  @ManyToMany(() => Kfz, (kfz) => kfz.footnotes)
   kfzs = new Collection<Kfz>(this);
 }

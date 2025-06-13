@@ -4,7 +4,7 @@ import { Kfz } from "@/entities";
 
 export const dynamic = "force-dynamic";
 
-export async function GET(req: NextRequest, { params }: { params: { states: string[] } }) {
+export async function GET(req: NextRequest, { params }: { params: Promise<{ states: string[] }> }) {
   const { states } = await params;
   console.log("States parameter:", JSON.stringify(states));
 
